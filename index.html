@@ -4,31 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>World Clock - Michaela Harcegova</title>
   </head>
   <body>
     <div class="container">
       <h1>World Clock</h1>
-      <select name="" id="">
+      <select name="" id="city-select">
         <option value="">Select a city</option>
-        <option value="">London</option>
-        <option value="">New York</option>
-        <option value="">Tokyo</option>
-        <option value="">Sydney</option>
+        <option value="Europe/Rome">Rome🇮🇹</option>
+        <option value="Europe/Istanbul">Istanbul 🇹🇷</option>
+        <option value="America/New_York">New York 🇺🇸</option>
+        <option value="Asia/Tokyo">Tokyo 🇯🇵</option>
+        <option value="Australia/Sydney">Sydney 🇦🇺</option>
+        <option value="Asia/Kuala_Lumpur">Kuala Lumpur 🇲🇾</option>
+        <option value="Asia/Shanghai">Shanghai 🇨🇳</option>
       </select>
-      <div class="city">
-        <div>
-          <h2>Los Angeles</h2>
-          <div class="date">January 13th 2026</div>
+      <div id="cities">
+        <div class="city" id="london">
+          <div>
+            <h2>London 🇬🇧</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"></div>
         </div>
-        <div class="time">17:07:35</div>
-      </div>
-      <div class="city">
-        <div>
-          <h2>Paris</h2>
-          <div class="date">January 13th 2026</div>
+        <div class="city" id="barcelona">
+          <div>
+            <h2>Barcelona 🇪🇸</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"></div>
         </div>
-        <div class="time">17:07:35</div>
       </div>
     </div>
     <footer>
