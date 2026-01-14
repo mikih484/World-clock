@@ -22,10 +22,24 @@ function updateTime() {
       .tz("Europe/Madrid")
       .format("HH:mm:ss");
   }
+
+  let bratislavaElement = document.querySelector("#bratislava");
+  if (bratislavaElement) {
+    let bratislavaDateElement = bratislavaElement.querySelector(".date");
+    let bratislavaTimeElement = bratislavaElement.querySelector(".time");
+    bratislavaDateElement.innerHTML = moment()
+      .tz("Europe/Bratislava")
+      .format("MMMM Do YYYY");
+    bratislavaTimeElement.innerHTML = moment()
+      .tz("Europe/Bratislava")
+  }
 }
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
@@ -37,7 +51,6 @@ function updateCity(event) {
     </div>
         <div class="time">${cityTime.format("HH:mm:ss")}
         </div>
-   </div>`;
   setInterval(updateCity, 1000);
 }
 
