@@ -32,6 +32,7 @@ function updateTime() {
       .format("MMMM Do YYYY");
     bratislavaTimeElement.innerHTML = moment()
       .tz("Europe/Bratislava")
+      .format("HH:mm:ss");
   }
 }
 
@@ -52,6 +53,9 @@ function updateCity(event) {
         <div class="time">${cityTime.format("HH:mm:ss")}
         </div>
   setInterval(updateCity, 1000);
+        </div>
+          <a href="/">Back to all cities</a>
+          `;
 }
 
 updateTime();
